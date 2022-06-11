@@ -17,7 +17,7 @@ public class RepositoryCostumersTest {
         administrator.setFullName("Emilia Raducu");
         administrator.setEmail("emi@yahoo.com");
         administrator.setPassword("123");
-        administrator.setCategorie("");
+        administrator.setCategorie("televizor");
 
         repositoryCostumers.insertCostumer(administrator);
     }

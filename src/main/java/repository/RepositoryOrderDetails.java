@@ -13,7 +13,7 @@ public class RepositoryOrderDetails extends Repository {
         super();
     }
 
-    public void insertCostumer(OrderDetails orderDetails) {
+    public void insertOrderDetails(OrderDetails orderDetails) {
         String insertTo = "";
 
             insertTo = ("insert into order_details (order_id, product_id, price, quantity) values (");

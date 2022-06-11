@@ -18,8 +18,8 @@ public class RepositoryCostumers extends Repository {
         String insertTo = "";
 
         if (costumer.getType().equals( "administrator")) {
-            insertTo = ("insert into costumers( email, password, full_name, billing_address, type, categorie, nr_de_comenzi) values  (");
-            insertTo += String.format(" '%s', '%s', '%s', %s, '%s', '%s'", costumer.getEmail(), costumer.getPassword(), costumer.getFullName(), costumer.getBillingAdress(), costumer.getType(), ((Administrator) costumer).getCategorie());
+            insertTo = ("insert into costumers( email, password, full_name, billing_address, type,  categorie) values  (");
+            insertTo += String.format(" '%s', '%s', '%s', '%s', '%s', '%s'", costumer.getEmail(), costumer.getPassword(), costumer.getFullName(), costumer.getBillingAdress(), costumer.getType(), ((Administrator) costumer).getCategorie());
             insertTo += ")";
             executeStatement(insertTo);
         } else if (costumer.getType().equals("client")) {

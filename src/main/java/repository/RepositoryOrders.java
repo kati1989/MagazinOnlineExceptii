@@ -18,7 +18,7 @@ public class RepositoryOrders extends Repository{
         String insertTo = "";
 
         insertTo = ("insert into orders ( costumer_id, ammount, shipping_adress) values  (");
-        insertTo += String.format("'%d', '%d', %s", orders.getCostumerId(), orders.getAmmount(), orders.getShippingAddress());
+        insertTo += String.format("'%d', '%d', '%s'", orders.getCostumerId(), orders.getAmmount(), orders.getShippingAddress());
         insertTo += ")";
         executeStatement(insertTo);
     }
@@ -62,12 +62,13 @@ public class RepositoryOrders extends Repository{
     }
 
     public List<String> getAllOrders() {
-        executeStatement("select id, customer_id, ammount, shipping_adress from orders");
+        executeStatement("select id, costumer_id, ammount, shipping_adress from orders");
         try {
             ResultSet set = statement.getResultSet();
             ArrayList<String> numeClient = new ArrayList<>();
             while (set.next()) {
-                numeClient.add(set.getString(1));
+                numeClient.add(set.getInt(1) + " " +set.getString(2)  +
+                         " " + set.getString(3) + " " + set.getString(4) );
             }
             return numeClient;
         } catch (Exception e) {

@@ -8,6 +8,7 @@ public class Orders {
     //kiszallitasi cim
     private String  shippingAddress;
 
+public  Orders(){}
     public Orders(int id,int costumerId,int ammount,String shippingAddress){
         this.id=id;
         this.costumerId=costumerId;

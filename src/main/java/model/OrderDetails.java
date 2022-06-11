@@ -70,8 +70,8 @@ public class OrderDetails {
         desc+="\nId: "+id+"\nOrder Id: "+orderId+"\nProduct Id: "+productId+"\nPrice: "+price+"\nQuantity: "+quantity;
         return  desc;
     }
-
-    public String toSave(){
+@Override
+    public String toString(){
         String text="";
         text+=id+","+orderId+","+productId+","+price+","+quantity;
         return  text;
